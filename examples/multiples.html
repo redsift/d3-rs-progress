@@ -17,17 +17,17 @@
     'use strict';
     var body = d3.select('body');
 
+    function remove(_hide, _i) {
+      setTimeout(function () {
+        _hide().then(function () {
+          console.log(_i, "hidden");
+        });
+      }, 1000 + 1000 * (5 - _i));
+    }
+
     for (var i=0; i<5; i++) {
       var host = body.append('div');
       var hide = d3_rs_progress.show(host);
-      function remove(_hide, _i) {
-        setTimeout(function () {
-          _hide().then(function () {
-            console.log(_i, "hidden");
-          });
-        }, 1000 + 1000 * (5 - _i));
-      }
-      
       remove(hide, i);
     }
 
