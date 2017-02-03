@@ -74,7 +74,6 @@ Property|Description|Transition
 `classed`|*String* SVG custom class|N
 `width`, `height`, `size`|*Integer* SVG container sizes|Y
 `scale`|*Float* SVG container scale|Y
-`background`|
 `zoom`|*Float* Zoom on the elements inside the SVG|Y
 `inset`|*Float* Pixel inset of the arc|N
 `rotation`|*Float* Degree rotation of the arc|Y
