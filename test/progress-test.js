@@ -4,7 +4,7 @@ var tape = require("@redsift/tape-reel")("<div id='test'></div>"),
 
 // This test should be on all brick compatable charts
 tape("html() empty state", function(t) {
-    var host = progress.icon();
+    var host = progress.html();
     var el = d3.select('#test');
     el.call(host);
     

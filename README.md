@@ -12,16 +12,17 @@
 
 ### Default Icon
 
-![Default Icon](https://bricks.redsift.io/reusable/d3-rs-progress)
-
-### Custom Icon
-
-![Custom Icon](https://bricks.redsift.io/reusable/d3-rs-progress)
+![Default Icon](https://bricks.redsift.cloud/reusable/d3-rs-progress)
 
 ## Usage
 
+```bash    
+    npm i @redsift/d3-rs-progress
+```
+
 ### Browser
 
+```javascript
     <script src="//static.redsift.io/reusable/d3-rs-progress/latest/d3-rs-progress.umd-es2015.min.js"></script>
     <script>
         var hide = d3_rs_geo.show('#parent');
@@ -29,18 +30,23 @@
             hide().then(() => console.log('hidden'))
         }, 1000);
     </script>
+```
 
 ### ES6
 
+```javascript
     import { show } from "@redsift/d3-rs-progress";
     let hide = show('#parent');
     ...
+```
 
 ### Require
 
+```javascript
     var progress = require("@redsift/d3-rs-progress");
     var hide = progress.show();
     ...
+```
 
 ### Parameters
 

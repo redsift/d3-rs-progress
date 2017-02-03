@@ -4,7 +4,7 @@ export {
 
 
 export {
-  default as icon
+  default as html
 } from "./src/icon";
 
 export {
