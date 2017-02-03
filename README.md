@@ -8,11 +8,13 @@
 
 ## Example
 
+### Show / Hide
+
 [View @redsift/d3-rs-progress on Codepen](http://codepen.io/rahulpowar/pen/zNRrEL)
 
-### Default Icon
+### Custom Icon
 
-![Default Icon](https://bricks.redsift.cloud/reusable/d3-rs-progress)
+[View @redsift/d3-rs-progress on Codepen](http://codepen.io/rahulpowar/pen/PWeJEG)
 
 ## Usage
 
