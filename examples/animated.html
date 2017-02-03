@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <style>
+      
+    body {
+      margin: 2em;
+    }
+
+    </style>    
+  </head>
+  <body>
+    <button id="show">Show</button>
+    <button id="hide">Hide</button>
+
+    <div id="elm"></div>
+        
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="/d3-rs-progress.umd-es2015.js"></script>
+    <script>
+
+    'use strict';
+
+    var hide = null;
+    d3.select('#hide').attr('disabled', true);
+
+    d3.select('#show').on('click', function() {
+      // Show the indicator and assign the hide function
+      hide = d3_rs_progress.show('#elm');
+      d3.select('#show').attr('disabled', true);
+      d3.select('#hide').attr('disabled', null);
+    });
+
+    d3.select('#hide').on('click', function() {
+      if (hide) {
+        hide().then(function() {
+          d3.select('#show').attr('disabled', null);
+          d3.select('#hide').attr('disabled', true);
+
+          console.log('Dismissed');
+          hide = null;
+        });
+      }
+    });
+
+    </script>
+  </body>
+</html>

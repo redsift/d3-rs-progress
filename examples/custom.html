@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <style>
+      
+    body {
+      margin: 2em;
+    }
+
+    </style>    
+  </head>
+  <body>
+        
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="/d3-rs-progress.umd-es2015.js"></script>
+    <script>
+
+    'use strict';
+    var body = d3.select('body');
+    var icon = d3_rs_progress.icon().size(32).angle(Math.PI / 2.0);
+    d3_rs_progress.show(body, icon);
+
+    </script>
+  </body>
+</html>
