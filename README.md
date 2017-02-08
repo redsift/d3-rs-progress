@@ -8,11 +8,13 @@
 
 ## Example
 
+### Show / Hide
+
 [View @redsift/d3-rs-progress on Codepen](http://codepen.io/rahulpowar/pen/zNRrEL)
 
-### Default Icon
+### Custom Icon
 
-![Default Icon](https://bricks.redsift.cloud/reusable/d3-rs-progress)
+[View @redsift/d3-rs-progress on Codepen](http://codepen.io/rahulpowar/pen/PWeJEG)
 
 ## Usage
 
@@ -23,7 +25,8 @@
 ### Browser
 
 ```javascript
-    <script src="//static.redsift.io/reusable/d3-rs-progress/latest/d3-rs-progress.umd-es2015.min.js"></script>
+    <script src="//static.redsift.io/reusable/d3-rs-progress/latest/d3-rs-progress.umd-es2015.min.js">
+    </script>
     <script>
         var hide = d3_rs_geo.show('#parent');
         setTimeout(() => {
@@ -48,28 +51,32 @@
     ...
 ```
 
+## API
+
+The helper function `show(location, icon)` creates an SVG and animates it till the caller hides the icon.
+
+Parameter|Detail
+---------|------
+`location`|Optional, defaults to body *String, D3 Selection* CSS selection where the icon should be injected.
+`icon`|Optional, defaults to the standard size *Reusable* Chart to render as the animated Icon.
+
+Returns   |Detail
+----------|------
+`function()`|Function to call to hide the icon. A call to the hide function returns a Promise that will resolve when the hide animation is finished.
+
+## Icon
+
+You may optionally supply an icon to `show()` that customizes the apperance of the animated icon or render it yourself as a standard reusable chart.
+
 ### Parameters
 
-Property|Description|Transition|Preview
+Property|Description|Transition
 ----|-----------|----------|-------
 `classed`|*String* SVG custom class|N
-`width`, `height`, `size`, `scale`|*Integer* SVG container sizes|Y
-`background`|
-`theme`|
-`margin`|
-`graticule`|
-`projection`| http://map-projections.net/patterson.php
-`projectionScale`|
-`interrupted`|*Boolean* enabled clipping for interrupted projections
-`country`|*Boolean* enable country polygons
-`fill`| Land filling
-`points`| Decimal expression of [ Longitude, Latitude ]
-`pointsDisplay`|
-`links`|
-`linksDisplay`|
-`zoom`|
-`zoomX`, `zoomY`|
-`onClick`|
-`redrawTopology`|*Boolean* When drawing the map, redraw the topology too
-`negative`|*String* Color for the negative space in the map i.e. typically the water. When interrupted is set to false, this does not display and the `background` color shows through
-`boundary`|*String* Color for the boundaries between country polygons
+`width`, `height`, `size`|*Integer* SVG container sizes|Y
+`scale`|*Float* SVG container scale|Y
+`zoom`|*Float* Zoom on the elements inside the SVG|Y
+`inset`|*Float* Pixel inset of the arc|N
+`rotation`|*Float* Degree rotation of the arc|Y
+`angle`|*Float* Radian size of the arc|Y
+`icon`|*Float* Scale of the internal icon|Y
