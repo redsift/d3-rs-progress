@@ -1,4 +1,6 @@
 import { select } from 'd3-selection';
+import { transition } from 'd3-transition'; // eslint-disable-line no-unused-vars
+
 import { easeSinIn as easeIn, easeSinOut as easeOut, easeBounce } from 'd3-ease';
 import { default as icon } from './icon';
 
