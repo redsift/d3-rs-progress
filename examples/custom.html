@@ -1,23 +1,67 @@
 <html>
   <head>
     <style>
-      
     body {
-      margin: 2em;
+      margin: 0;
+      padding: 2em;
+    }
+    .example {
+      padding: 2em;
+    }
+    .example-default1 {
+      padding: 2em;
+      background-color: blue;
+    }
+    .example-default2 {
+      padding: 2em;
+      background-color: red;
+    }
+    .example-default3 {
+      padding: 2em;
+      background-color: green;
+    }
+    .examples {
+      display: flex;
     }
 
-    </style>    
+
+    </style>
   </head>
   <body>
-        
+    <div class = "examples">
+      <div class = "example example-default0"></div>
+      <div class = "example example-default1"></div>
+      <div class = "example example-default2"></div>
+      <div class = "example example-default3"></div>
+    </div>
+    <div class = "example example-colors"></div>
+    <div class = "example example-border"></div>
+    <div class = "example example-angle"></div>
+    <div class = "example example-size"></div>
+
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="/d3-rs-progress.umd-es2015.js"></script>
     <script>
-
     'use strict';
-    var body = d3.select('body');
-    var icon = d3_rs_progress.html().size(32).angle(Math.PI / 2.0);
-    d3_rs_progress.show(body, icon);
+
+    var colorsWrapper = d3.select('div.example-colors');
+    var angleWrapper = d3.select('div.example-angle');
+    var sizeWrapper = d3.select('div.example-size');
+    var borderWrapper = d3.select('div.example-border');
+
+    var iconAngle = d3_rs_progress.html('icon-angle').angle(Math.PI / 2.0);
+    var iconColors = d3_rs_progress.html('icon-colors').colors('#ea8282', 'maroon');
+    var iconBorder = d3_rs_progress.html('icon-colors').border(true);
+    var iconSize = d3_rs_progress.html('icon-size').size(32);
+
+    d3_rs_progress.show(d3.select('div.example-default0'), d3_rs_progress.html('icon-default'));
+    d3_rs_progress.show(d3.select('div.example-default1'), d3_rs_progress.html('icon-default'));
+    d3_rs_progress.show(d3.select('div.example-default2'), d3_rs_progress.html('icon-default'));
+    d3_rs_progress.show(d3.select('div.example-default3'), d3_rs_progress.html('icon-default'));
+    d3_rs_progress.show(sizeWrapper, iconSize);
+    d3_rs_progress.show(angleWrapper, iconAngle);
+    d3_rs_progress.show(colorsWrapper, iconColors);
+    d3_rs_progress.show(borderWrapper, iconBorder);
 
     </script>
   </body>

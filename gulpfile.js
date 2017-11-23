@@ -5,11 +5,11 @@ var argv = require('yargs')
                 .demand(['o'])
                 .describe('o', 'Output file')
                 .argv;
-                
+
 var gulp = require('gulp');
 var del = require('del');
 var util = require('gulp-util');
-var rollup = require('rollup-stream'); 
+var rollup = require('rollup-stream');
 var uglify = require('gulp-uglify');
 var browserSync = require('browser-sync').create();
 var buble = require('rollup-plugin-buble');
@@ -51,18 +51,18 @@ globals.forEach((d) => {
 
 var task = {};
 
-gulp.task('clean', () => del([ 'distribution/**' ]));  
+gulp.task('clean', () => del([ 'distribution/**' ]));
 
-gulp.task('umd', task.umd = () => {  
+gulp.task('umd', task.umd = () => {
   return rollup({
-            moduleName: outputFilename.replace(/-/g, '_'),
+            name: outputFilename.replace(/-/g, '_'),
             globals: globalMap,
             entry: 'index.js',
             format: 'umd',
-            sourceMap: true,
-            plugins: [ 
+            sourcemap: true,
+            plugins: [
                         json({
-                            include: [ '**/package.json' , 'node_modules/**/*.json' ], 
+                            include: [ '**/package.json' , 'node_modules/**/*.json' ],
                             exclude: [  ]
                         }),
                         nodeResolve({
@@ -83,8 +83,8 @@ gulp.task('umd', task.umd = () => {
                             // local ones with the same names
                             preferBuiltins: false  // Default: true
                         }),
-                        commonjs(), 
-                        buble() 
+                        commonjs(),
+                        buble()
                         ]
         })
         .pipe(source('main.js', './src'))
