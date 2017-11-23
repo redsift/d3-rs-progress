@@ -1,6 +1,6 @@
 {
   "name": "@redsift/d3-rs-progress",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Generates an animated D3v4.",
   "keywords": [
     "progress",
