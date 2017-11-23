@@ -80,3 +80,5 @@ Property|Description|Transition
 `rotation`|*Float* Degree rotation of the arc|Y
 `angle`|*Float* Radian size of the arc|Y
 `icon`|*Float* Scale of the internal icon|Y
+`colors`|*String*, *String* Background color string and foreground color string, if used both required. **Note this will add a border to icon**| N
+`border`|*Boolean* Adds border to icon and keeps center solid. **If colors used this will default to true**  | N
