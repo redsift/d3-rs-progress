@@ -1,11 +1,11 @@
 export {
   version
-} from "./package.json";
+} from "../package.json";
 
 export {
   default as html
-} from "./src/icon";
+} from "./icon";
 
 export {
   default as show
-} from "./src/animation";
+} from "./animation";
