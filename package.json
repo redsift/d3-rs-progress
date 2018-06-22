@@ -1,6 +1,6 @@
 {
   "name": "@redsift/d3-rs-progress",
-  "version": "0.0.4",
+  "version": "0.2.1",
   "description": "Generates an animated D3v4.",
   "keywords": [
     "progress",
@@ -33,17 +33,17 @@
     "posttest": "eslint index.js src"
   },
   "dependencies": {
-    "@redsift/d3-rs-svg": "~0.2.5",
+    "@redsift/d3-rs-svg": "^0.4.0",
+    "d3-ease": "^1.0.2",
     "d3-selection": "^1.0.2",
-    "d3-transition": "^1.0.3",
     "d3-shape": "^1.0.3",
-    "d3-ease": "^1.0.2"
+    "d3-transition": "^1.0.3"
   },
   "devDependencies": {
-    "@redsift/rollup-bundler": "^0.3.2",
+    "@redsift/rollup-bundler": "^0.5.1",
+    "@redsift/tape-reel": "^0.1.0",
     "babel-plugin-external-helpers": "^6.22.0",
-    "babel-preset-env": "^1.6.1",    
-    "@redsift/tape-reel": "~0.1.0",
+    "babel-preset-env": "^1.6.1",
     "browser-sync": "^2.14.0",
     "del": "^2.2.2",
     "eslint": "^3.3.1",
@@ -53,10 +53,10 @@
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.7",
     "rollup": "^0.41.4",
-    "rollup-plugin-node-resolve": "^2.0.0",
-    "rollup-plugin-commonjs": "^7.0.0",
     "rollup-plugin-buble": "^0.15.0",
+    "rollup-plugin-commonjs": "^7.0.0",
     "rollup-plugin-json": "^2.0.0",
+    "rollup-plugin-node-resolve": "^2.0.0",
     "rollup-stream": "^1.11.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
