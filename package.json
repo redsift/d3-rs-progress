@@ -1,6 +1,10 @@
 {
   "name": "@redsift/d3-rs-progress",
+<<<<<<< HEAD
   "version": "0.2.1",
+=======
+  "version": "0.1.0",
+>>>>>>> 2290dff8d342e7d48e48f5c0b3f69008b31f4fea
   "description": "Generates an animated D3v4.",
   "keywords": [
     "progress",
@@ -26,16 +30,16 @@
   "scripts": {
     "serve": "gulp -o d3-rs-progress -g d3-selection -g d3-transition -g d3-shape -g d3-ease serve",
     "prepublish": "npm run clean; npm run build",
-    "build": "npm run clean; node ./node_modules/@redsift/rollup-bundler/src/index.js",
+    "build": "npm run clean; node ./node_modules/@redsift/rollup-bundler/src/index.js bundle.config.js",
     "clean": "rm -rf dist",
     "pretest": "npm outdated || true && npm run build",
     "test": "tape 'test/**/*-test.js'",
     "posttest": "eslint index.js src"
   },
   "dependencies": {
-    "@redsift/d3-rs-svg": "^0.4.0",
+    "@redsift/d3-rs-svg": "^0.5.1",
     "d3-ease": "^1.0.2",
-    "d3-selection": "^1.0.2",
+    "d3-selection": "^1.3.0",
     "d3-shape": "^1.0.3",
     "d3-transition": "^1.0.3"
   },
