@@ -75,9 +75,9 @@
     normalize-path "^2.0.1"
     through2 "^2.0.3"
 
-"@redsift/d3-rs-svg@^0.5.1":
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/@redsift/d3-rs-svg/-/d3-rs-svg-0.5.1.tgz#190c1bd4915e432fc85f183a05d11d7e6b3962e4"
+"@redsift/d3-rs-svg@^0.5.2":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@redsift/d3-rs-svg/-/d3-rs-svg-0.5.2.tgz#db9aa4f75357618e2b8abe148d916a743bd53850"
   dependencies:
     d3-selection "^1.2.0"
 
