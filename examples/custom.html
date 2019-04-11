@@ -20,7 +20,7 @@
       padding: 2em;
       background-color: green;
     }
-    .examples {
+    .examples, .custom-paths {
       display: flex;
     }
 
@@ -39,6 +39,11 @@
     <div class = "example example-angle"></div>
     <div class = "example example-size"></div>
 
+    <div class = "custom-paths"></div>
+      <div class = "example example-path-email"></div>
+      <div class = "example example-path-grain"></div>
+    </div>
+
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="/d3-rs-progress.umd-es2015.js"></script>
     <script>
@@ -53,6 +58,8 @@
     var iconColors = d3_rs_progress.html('icon-colors').colors('#ea8282', 'maroon');
     var iconBorder = d3_rs_progress.html('icon-colors').border(true);
     var iconSize = d3_rs_progress.html('icon-size').size(32);
+    
+
 
     d3_rs_progress.show(d3.select('div.example-default0'), d3_rs_progress.html('icon-default'));
     d3_rs_progress.show(d3.select('div.example-default1'), d3_rs_progress.html('icon-default'));
@@ -62,6 +69,24 @@
     d3_rs_progress.show(angleWrapper, iconAngle);
     d3_rs_progress.show(colorsWrapper, iconColors);
     d3_rs_progress.show(borderWrapper, iconBorder);
+
+    // custom icons and offsets
+    var iconPathEmail = d3_rs_progress.html('icon-path-email')
+        .path('M73.7,68.9l52.71,24.86L252.8,31.3s-.36-12.46-.39-18.21C252.34.65,239.89.5,227.1.5H16.7S.5.5.5,13.09c0,17.29.34,116.62.34,155.5,0,9.64,2.3,19.31,19.93,19.31H239.25c3.66,0,13.35-1,13.55-19.31s.2-96.11.2-96.11S148.13,130.74,126.41,130.8c-16.35,0-24-6.18-51.21-18.87-3.44-1.6-16.9-9.13-16.9-9.13Z')
+        .icon(0.01678)
+        .offsetX(-125)
+        .offsetY(-96);
+
+    d3_rs_progress.show(d3.select('div.example-path-email'), iconPathEmail);
+    
+    var iconPathGrain = d3_rs_progress.html('icon-path-grain')
+        .path('M50.2,24.7V94l59.7-26.9L181.3,94v23.1l-71.4-27.7l-72.6,32.3V29.9L1.4,44.4v160.7l108-44.2v19.6l-108,39.6L110,266l107.6-45.9c-1.9,0.8-106.4-39.4-106.4-39.4v-19.1l106.4,43.4V44.4L109.8,0.5L50.2,24.7z')
+        .icon(0.01678)
+        .offsetX(-110)
+        .offsetY(-130);
+
+    d3_rs_progress.show(d3.select('div.example-path-grain'), iconPathGrain);
+    
 
     </script>
   </body>
