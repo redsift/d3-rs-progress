@@ -19,7 +19,10 @@ export default function icon(id) {
       colors = false,
       border = false,
       bgColor = 'white',
-      fgColor = 'black';
+      fgColor = 'black',
+      offsetX = 0,
+      offsetY = -4,
+      path = 'M0,0l3,1c0,0,0.2,5.4-3,7c-3.2-1.6-3-7-3-7L0,0z';
 
   function _impl(context) {
     const selection = context.selection ? context.selection() : context,
@@ -70,12 +73,12 @@ export default function icon(id) {
               .attr('d', half)
               .attr('transform', `translate(${r},${r}), rotate(${rotation})`);
         g.append('g')
-              .attr('transform', `translate(${r},${r}), scale(${iconScale * icon})`)
+              .attr('transform', `translate(${r+offsetX},${r+offsetY}), scale(${iconScale * icon})`)
               .append('path')
                 .attr('class', 'icon')
-                .attr('d', 'M0,0l3,1c0,0,0.2,5.4-3,7c-3.2-1.6-3-7-3-7L0,0z')
+                .attr('d', path)
                 .attr('style', `mix-blend-mode: ${(colors || border) ? 'unset' : 'difference'}`)
-                .attr('transform', `translate(0,-4)`);
+                .attr('transform', `translate(${offsetX},${offsetY})`);
       }
       let bg = g.select('circle.bg');
       let fg = g.select('path.fg'),
@@ -159,6 +162,18 @@ export default function icon(id) {
 
   _impl.icon = function(value) {
     return arguments.length ? (icon = value, _impl) : icon;
+  };
+
+  _impl.path = function(value) {
+    return arguments.length ? (path = value, _impl) : path;
+  };
+
+  _impl.offsetX = function(value) {
+    return arguments.length ? (offsetX = value, _impl) : offsetX;
+  };
+
+  _impl.offsetY = function(value) {
+    return arguments.length ? (offsetY = value, _impl) : offsetY;
   };
 
   return _impl;
